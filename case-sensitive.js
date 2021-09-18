@@ -21,11 +21,8 @@ function fileExistsWithCaseSync(filepath) {
 
 class CaseSensitiveChecker extends Packager {
   addAsset(asset) {
-    console.log('addAsset', asset.name);
 
-    if (fileExistsWithCaseSync(asset.name)) {
-      console.log('fileexists', asset.name);
-    } else {
+    if (!fileExistsWithCaseSync(asset.name)) {
       throw new Error(`file ${asset.name} is not case sensitive`);
     }
 

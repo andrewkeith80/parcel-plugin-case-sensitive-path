@@ -1,3 +1,4 @@
 /.npmrc
 /parcel-plugin-case-sensitive-1.0.0.tgz
 /node_modules/*
+*.tgz
