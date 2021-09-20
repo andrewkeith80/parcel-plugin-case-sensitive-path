@@ -29,11 +29,7 @@ This command just installs `parcel-plugin-case-sensitive-path` in your `node_mod
 
 There is no configurations that is required.
 
-Files that are inspected are 
-
-```
-["js","jsx","ts","tsx","sccs","css"]
-```
+Files that are inspected are `js` and `css` and all the variations that compile into those file types.
 
 # Example of a bundle failure
 

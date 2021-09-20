@@ -1,8 +1,7 @@
 module.exports = function(bundler) {
     
-    ["js","jsx"].forEach(f => {
-      bundler.addPackager(f, require.resolve("./case-sensitive"));
-    });
+  bundler.addPackager("js", require.resolve("./case-sensitive-js"));
+  bundler.addPackager("css", require.resolve("./case-sensitive-css"));
 
     return bundler;
   }
