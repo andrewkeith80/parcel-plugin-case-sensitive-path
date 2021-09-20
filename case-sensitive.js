@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const Packager = require("parcel-bundler/src/packagers/Packager");
+const JSPackager = require("parcel-bundler/src/packagers/JSPackager");
 
 /**
   Got this function stackoverflow because I am too lazy to write proper code .. LOL 
@@ -19,14 +19,14 @@ function fileExistsWithCaseSync(filepath) {
 }
 
 
-class CaseSensitiveChecker extends Packager {
-  addAsset(asset) {
+class CaseSensitiveChecker extends JSPackager {
+  async addAsset(asset) {
 
     if (!fileExistsWithCaseSync(asset.name)) {
       throw new Error(`file ${asset.name} is not case sensitive`);
     }
 
-    return asset;
+    return await super.addAsset(asset);
   }
 }
 
